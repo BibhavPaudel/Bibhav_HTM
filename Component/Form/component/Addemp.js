@@ -85,7 +85,7 @@ export default function AddEmpForm() {
       <>
       <div className="add-conatiner">
         <h2 className="bg-cyan-600 bg-gradient-to-r from-indigo-500 rounded-3xl font-extrabold  text-white">Add employee form</h2>
-        <div className="form-container">
+        <div className="form-container ">
           <form>
             <div className="inpiut-name ">
               <input onChange={Handler?.FormHandler} value = {Handler?.form?.FirstName} type ="text" placeholder ="First Name" className="w-full px-3 py-2 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-800 dark:focus:ring-gray-900 dark:focus:border-gray-500 name" name = "FirstName" />

@@ -44,6 +44,10 @@ export default function  Form(){
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     await provider.send('eth_requestAccounts', []);
     const signer = provider.getSigner();
+  //   if(typeof window.ethereum =="undefined"){
+  //     console.log("PLease install the metamask");
+  // }
+  // let web3 = await new Web3(window.ethereum);
   if(form.FirstName == ""){
     toast.warn("First Name filed is empty");
   }
@@ -64,7 +68,7 @@ export default function  Form(){
 
 
     const contract = new ethers.Contract(
-      "0x5F61cAacCEe71d36D7a3d9c1dE73Db9237e04505",
+      "0x1681F1676cb3685bD28a3ea2D0BA56D42eEAe564",
       allemp.abi,
       signer
     );

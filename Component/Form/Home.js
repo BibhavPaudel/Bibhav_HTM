@@ -22,41 +22,53 @@ export default function Home({
   return (
     <div>
     <div className = "HomeWrapper">
-      <div className= "FilterWrapper" >
-        <div className="Filteraction" style ={{fontSize:40}}/>
-        <div className='Category'  onClick={()=>setFilter(internData)} >Intern</div>
-        <div className='Category' onClick={()=>setFilter(HRData)}>H.R</div>
-        <div className='Category' onClick={()=>setFilter(WebData)}>Web Developer</div>
-        <div className='Category' onClick={()=>setFilter(SDEData)}>S.D.E</div>
+      <div className= "FilterWrapper flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <div className="Filteraction " style ={{fontSize:40}}/>
+        <div className='Category block py-2 pr-4 pl-3  font-semibold text-lg rounded text-gray-700 md:bg-transparent hover:text-blue-700 md:p-0 dark:text-white'  onClick={()=>setFilter(internData)} >Intern</div>
+        <div className='Category block py-2 pr-4 pl-3 font-sans text-lg text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700' onClick={()=>setFilter(HRData)}>H.R</div>
+        <div className='Category block py-2 pr-4 pl-3 font-sans text-lg text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700' onClick={()=>setFilter(WebData)}>Web Developer</div>
+        <div className='Category block py-2 pr-4 pl-3 font-sans text-lg text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700' onClick={()=>setFilter(SDEData)}>S.D.E</div>
       </div>
+
+      
+
+
+
+      
+
+
       <div className='Cardsswapper'>
       {filter?.map((e)=>{
         console.log("image->",e.image);
         return (
+          <div className='p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700'>
+          
+          
           < div className='Card'>
             <div className='CardImg'>
               <Image layout ="fill"
               src = {"https://ipfs.infura.io/ipfs/"+e.image}
               />
             </div>
-            <div className="Title">
+            <div className="Title block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
               {e.FirstName}
             </div>
-            < div className='CardData'>
-              <div className = "Text">Owner<AccountBoxIcon/></div>
+            < div className=' flex-row CardData mb-3 font-normal text-gray-500 dark:text-gray-400'>
+              <div className = "Text text-bold text-lg">Owner<AccountBoxIcon/></div>
               <div className = "Text">{e.owner.slice(0,6)}...{e.owner.slice(39)}<AccountBoxIcon/></div>
             </div>
-            <div className ="CardData" >
+            <div className ="CardData mb-3 font-normal text-gray-500 dark:text-gray-400 " >
               <div className = "Text">Amount<AccountBoxIcon/></div>
               <div className = "Text">100 MATIC<AccountBoxIcon/></div>
             </div>
-            < div className= "CardData">
+            < div className= "CardData mb-3 font-normal text-gray-500 dark:text-gray-400 ">
               <div className = "Text"><EventIcon /></div>
               <div className = "Text">{new Date(e.timestamp*1000).toLocaleString()}</div>
             </div>
-            <Button>
+            <Button className="rounded-xl bg-blue-500 bg-gradient-to-r from-indigo-500 button">
               ADD MORE EMPLOYEE
             </Button>
+          </div> 
           </div>
         )
       })

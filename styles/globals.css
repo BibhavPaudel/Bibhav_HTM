@@ -1,8 +1,6 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 html{
   scroll-behavior: smooth;
 }
@@ -217,7 +215,6 @@ wrapperM ul li{
 }
 .Category{
   padding: 10px 15px;
-  background-color: ;
   margin: 0px 15px;
   border-radius: 8px;
   font-family: 'Poppins';
@@ -225,6 +222,10 @@ wrapperM ul li{
   cursor: pointer;
 }
 
+.CardImg{position: relative;
+  height: 120px;
+  width: 100%;
+}
 .CardsWrapper{
   display: flex;
   justify-content: space-between;
@@ -238,7 +239,7 @@ wrapperM ul li{
   display: flex;
   justify-content: space-between;
   margin: 2px 0px;
-  background-color: ;
+ 
   padding: 5px;
   cursor: pointer;
 }
@@ -257,7 +258,7 @@ wrapperM ul li{
   font-family: 'Roboto';
   font-size: 18px;
   margin: 2px 0px;
-  background-color:black;
+  
   padding: 5px;
   cursor: pointer;
   font-weight: normal;

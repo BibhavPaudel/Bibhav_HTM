@@ -3,7 +3,7 @@ import Form from "../Component/Form/form"
 export default function AddEmp() {
     return (
       <>
-      <div>
+      <div className="h-96 bg-red-300">
         <Form/>
         {/* <AddEmpForm/>        */}
       </div>
