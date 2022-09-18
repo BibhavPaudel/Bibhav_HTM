@@ -6,8 +6,8 @@ import { TailSpin } from "react-loader-spinner";
 import {create as IPFSHTTPClient} from "ipfs-http-client";
 
 // import { Buffer } from "buffer";
-const projectId = '2EFZSrxXvWgXDpOsDrr4cQosKcl';
-const ProjectSecret = 'b84c6cb2eec9c4536a0b6424ca709f9d';
+const projectId = process.env.projectId ;
+const ProjectSecret = process.env.ProjectSecret;
 
 // if(process.browser){
 //   console.log(window.location.pathname);

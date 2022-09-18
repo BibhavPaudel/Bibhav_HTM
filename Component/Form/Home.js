@@ -82,7 +82,7 @@ export default function Home({
 
 export async function getStaticProps(){
   const provider= new ethers.providers.JsonRpcProvider(
-    "https://polygon-mumbai.infura.io/v3/95688893704a4d5bac083296c3547383"
+    process.env.rpcurl
   );
 
   const contract = new ethers.Contract(
